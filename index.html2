@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyX Landscaping Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const App = () => {
+            const landscapingServices = [
+                { title: "Lawn Mowing", price: "$30 per session", description: "Professional lawn mowing for a pristine look." },
+                { title: "Leaf Clearing", price: "$25 per session", description: "Keep your yard tidy with our leaf clearing service." },
+                { title: "Weed Snipping", price: "$20 per session", description: "Precision weed removal for a clean lawn." },
+                { title: "Weed Spraying", price: "$25 per session", description: "Effective weed control to protect your lawn." },
+                { title: "Lawn Seeding", price: "$50 per 1000 sq ft", description: "Promote lush growth with expert seeding." },
+                { title: "Lawn Fertilizing", price: "$40 per 1000 sq ft", description: "Nutrient-rich fertilization for a healthy lawn." },
+            ];
+
+            const snowRemovalServices = [
+                { title: "Driveway & Sidewalk Snow Removal", price: "$40 per hour (minimum 1 hour)", description: "Fast and thorough snow clearing for homes and businesses." },
+                { title: "Parking Lot Clearing", price: "$60 per hour", description: "Keep commercial properties safe and accessible." },
+                { title: "Roof Snow Removal", price: "$0.35/sq ft (1/12 - 4/12 pitch) / $0.25/sq ft (5/12 - 9/12 pitch)", description: "Safe snow removal for 1-2 story roofs." },
+                { title: "Salting & Ice Management", price: "$30 per application", description: "Prevent hazardous ice buildup." },
+            ];
+
+            const groundSoilServices = [
+                { title: "Sod Installation", price: "$1.50 per sq ft", description: "Professional sod installation for a vibrant lawn." },
+                { title: "Soil Leveling", price: "$45 per hour", description: "Expert leveling for a smooth, even surface." },
+                { title: "Gravel Leveling", price: "$50 per hour", description: "Precise gravel leveling for pathways and driveways." },
+            ];
+
+            const treePlantServices = [
+                { title: "Prune Growth Removal", price: "$30 per hour", description: "Keep plants healthy with expert pruning." },
+                { title: "Tree Branch Trimming", price: "$50 per tree", description: "Safe and professional branch trimming." },
+                { title: "Dead or Fallen Tree Removal", price: "$100-$500 (based on size)", description: "Expert removal of dead or fallen trees." },
+            ];
+
+            const yardCleanupServices = [
+                { title: "General Yard Cleanup", price: "$35 per hour", description: "Comprehensive cleanup for a spotless yard." },
+                { title: "Pet Waste Removal", price: "$15 per session", description: "Discreet and thorough pet waste cleanup." },
+            ];
+
+            return (
+                <div className="font-sans text-gray-800">
+                    {/* Header */}
+                    <header className="bg-green-700 text-white text-center py-8">
+                        <h1 className="text-4xl font-bold">PropertyX Landscaping Services</h1>
+                        <p className="text-xl mt-2">Elevating Outdoor Spaces with Expertise and Care</p>
+                    </header>
+
+                    <div className="max-w-7xl mx-auto p-8">
+                        {/* Landscaping Services */}
+                        <section className="mb-12">
+                            <h2 className="text-3xl font-semibold text-green-700 border-b-2 border-green-700 pb-2 mb-4">Landscaping Services</h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {landscapingServices.map((service, index) => (
+                                    <div key={index} className="bg-gray-100 p-4 rounded-lg text-center">
+                                        <h3 className="text-xl font-semibold text-green-700">{service.title}</h3>
+                                        <p className="text-pink-600 font-bold">{service.price}</p>
+                                        <p>{service.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Snow Removal Services */}
+                        <section className="mb-12">
+                            <h2 className="text-3xl font-semibold text-green-700 border-b-2 border-green-700 pb-2 mb-4">Snow Removal Services</h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {snowRemovalServices.map((service, index) => (
+                                    <div key={index} className="bg-gray-100 p-4 rounded-lg text-center">
+                                        <h3 className="text-xl font-semibold text-green-700">{service.title}</h3>
+                                        <p className="text-pink-600 font-bold">{service.price}</p>
+                                        <p>{service.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Ground and Soil Management */}
+                        <section className="mb-12">
+                            <h2 className="text-3xl font-semibold text-green-700 border-b-2 border-green-700 pb-2 mb-4">Ground and Soil Management</h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {groundSoilServices.map((service, index) => (
+                                    <div key={index} className="bg-gray-100 p-4 rounded-lg text-center">
+                                        <h3 className="text-xl font-semibold text-green-700">{service.title}</h3>
+                                        <p className="text-pink-600 font-bold">{service.price}</p>
+                                        <p>{service.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Tree and Plant Care */}
+                        <section className="mb-12">
+                            <h2 className="text-3xl font-semibold text-green-700 border-b-2 border-green-700 pb-2 mb-4">Tree and Plant Care</h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {treePlantServices.map((service, index) => (
+                                    <div key={index} className="bg-gray-100 p-4 rounded-lg text-center">
+                                        <h3 className="text-xl font-semibold text-green-700">{service.title}</h3>
+                                        <p className="text-pink-600 font-bold">{service.price}</p>
+                                        <p>{service.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Yard Cleanup */}
+                        <section className="mb-12">
+                            <h2 className="text-3xl font-semibold text-green-700 border-b-2 border-green-700 pb-2 mb-4">Yard Cleanup</h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {yardCleanupServices.map((service, index) => (
+                                    <div key={index} className="bg-gray-100 p-4 rounded-lg text-center">
+                                        <h3 className="text-xl font-semibold text-green-700">{service.title}</h3>
+                                        <p className="text-pink-600 font-bold">{service.price}</p>
+                                        <p>{service.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Contact */}
+                        <section id="contact" className="mb-12">
+                            <h2 className="text-3xl font-semibold text-green-700 border-b-2 border-green-700 pb-2 mb-4">Contact Us</h2>
+                            <p className="mb-4">Reach out to schedule services or inquire about our offerings.</p>
+                            <p><strong>Contact:</strong> Chase Skelliter</p>
+                            <p><strong>Phone:</strong> <a href="tel:780-518-9538" className="text-green-700 underline">780-518-9538</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:chaseskr@gmail.com" className="text-green-700 underline">chaseskr@gmail.com</a></p>
+                        </section>
+
+                        {/* Vision */}
+                        <section className="mb-12">
+                            <h2 className="text-3xl font-semibold text-green-700 border-b-2 border-green-700 pb-2 mb-4">Our Vision</h2>
+                            <p>PropertyX Landscaping Services aims to provide comprehensive, high-quality landscaping and property maintenance solutions, ensuring stunning outdoor spaces for residential and commercial clients year-round.</p>
+                        </section>
+                    </div>
+
+                    {/* Footer */}
+                    <footer className="bg-green-700 text-white text-center py-4">
+                        <p>© 2025 PropertyX Landscaping Services. All rights reserved.</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"></script>
+</body>
+</html>
